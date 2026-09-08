@@ -11,13 +11,13 @@ export const metadata: Metadata = {
   description: 'Soluciones de tráfico, automatización y control industrial, petróleo, gas y marino para Latinoamérica.',
   icons: { icon: '/favicon.png' },
   openGraph: {
-    title: 'AREC | Medición precisa. Decisiones que mueven industrias.',
+    title: 'AREC | Soluciones que mueven industrias.',
     description: 'Instrumentación e ingeniería aplicada para Latinoamérica.',
     images: [{ url: '/og.png', width: 1200, height: 630, alt: 'AREC — Instrumentación e ingeniería aplicada' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AREC | Medición precisa. Decisiones que mueven industrias.',
+    title: 'AREC | Soluciones que mueven industrias.',
     description: 'Instrumentación e ingeniería aplicada para Latinoamérica.',
     images: ['/og.png'],
   },

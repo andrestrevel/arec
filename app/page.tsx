@@ -23,22 +23,19 @@ import {
 const businessLines = [
   {
     code: 'TSS',
-    title: 'Soluciones de tráfico y servicios',
-    text: 'Infraestructura inteligente para medir, interpretar y gestionar la movilidad.',
+    title: 'Sistemas Inteligentes de Transporte - ITS',
     image: '/assets/traffic-flow.jpg',
     icon: Route,
   },
   {
     code: 'ACI',
-    title: 'Automatización y control industrial',
-    text: 'Instrumentación precisa para procesos, calidad, mantenimiento y producción.',
+    title: 'Automatización industrial',
     image: '/assets/industrial-control.jpg',
     icon: Factory,
   },
   {
     code: 'PGM',
-    title: 'Petróleo, gas y marino',
-    text: 'Protección, monitoreo y control para operaciones críticas y ambientes exigentes.',
+    title: 'Petróleo, Gas y Marino.',
     image: '/assets/oil-gas.jpg',
     icon: Gauge,
   },
@@ -51,7 +48,6 @@ const applications = [
   ['Medición de fuerza', Ruler],
   ['Medición de peso', Weight],
   ['Control de temperatura', Settings2],
-  ['Transporte inteligente (ITS)', Route],
   ['Control industrial', Cpu],
   ['Diagnóstico estructural', Building2],
   ['Medición de torque', CircleGauge],
@@ -59,21 +55,15 @@ const applications = [
 ] as const;
 
 const products = [
-  'Research Center',
   'Acelerómetros y transmisores de vibración',
-  'Biomecánica',
-  'Celdas de carga',
-  'Clinómetros',
-  'Extensómetros',
+  'Celdas de carga (peso)',
   'Medidores de flujo',
-  'Medidores de torque (PAR)',
+  'Medidores de torque',
   'Sensores de nivel',
   'Sensores de presión',
-  'Sensores y transmisores de temperatura',
-  'Sistemas de información y software',
-  'Seguridad para maquinaria Diesel',
-  'Sistemas inteligentes de transporte (ITS)',
-  'Válvulas mecánicas y neumáticas',
+  'Sensores de temperatura',
+  'Válvulas termostáticas',
+  'Sistemas de protección para atmósferas explosivas (ATEX)',
 ];
 
 const services = [
@@ -152,16 +142,12 @@ export default function Home() {
         <div className="engineering-grid absolute inset-0 opacity-35" />
         <div className="relative mx-auto grid min-h-[740px] max-w-[1440px] items-center gap-14 px-5 py-24 lg:grid-cols-[1.1fr_.9fr] lg:px-10">
           <div className="max-w-3xl">
-            <p className="mb-7 flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.2em] text-[#f5a623]">
-              <span className="h-px w-8 bg-[#f5a623]" /> Ingeniería aplicada · Latinoamérica
-            </p>
             <h1 className="max-w-4xl text-[clamp(3rem,7vw,6.8rem)] font-black leading-[.88] tracking-[-.065em]">
-              Medición precisa.<br />
-              <span className="text-[#37c8e7]">Decisiones</span> que<br />
-              mueven industrias.
+              Soluciones que<br />
+              <span className="text-[#37c8e7]">mueven industrias.</span>
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-white/72">
-              Integramos productos, conocimiento y servicio para convertir variables críticas en información confiable, desde la vía hasta la planta y el motor.
+              Integramos productos, conocimiento y servicio para convertir variables críticas en información confiable.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
               <ArrowLink href="#soluciones">Explorar soluciones</ArrowLink>
@@ -201,7 +187,7 @@ export default function Home() {
               <h2 className="mt-5 text-4xl font-black leading-[.95] tracking-[-.045em] sm:text-6xl">Ingeniería que conecta el mundo físico con decisiones.</h2>
             </div>
             <p className="max-w-2xl text-lg leading-8 text-[#334b60] lg:ml-auto">
-              La nueva AREC organiza su experiencia alrededor de tres frentes originales, con una lectura más clara para equipos técnicos, compradores y líderes de proyecto.
+              AREC organiza su experiencia alrededor de tres verticales de mercado.
             </p>
           </div>
           <div className="mt-14 grid gap-4 lg:grid-cols-3">
@@ -218,8 +204,6 @@ export default function Home() {
                     </div>
                     <div>
                       <h3 className="text-3xl font-black leading-none tracking-[-.035em]">{line.title}</h3>
-                      <p className="mt-4 leading-7 text-white/65">{line.text}</p>
-                      <a href="#contacto" className="mt-7 inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.12em] text-[#37c8e7]">Conocer la línea <ArrowRight className="size-4" /></a>
                     </div>
                   </div>
                 </article>
@@ -234,7 +218,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-[1440px] px-5 lg:px-10">
           <div className="grid gap-10 lg:grid-cols-[.75fr_1.25fr]">
             <div>
-              <p className="section-kicker !text-[#37c8e7]">Aplicaciones originales</p>
+              <p className="section-kicker !text-[#37c8e7]">Una solución para cada aplicación</p>
               <h2 className="mt-5 text-4xl font-black leading-[.95] tracking-[-.045em] sm:text-6xl">Del fenómeno físico a la acción.</h2>
               <p className="mt-6 max-w-xl text-lg leading-8 text-white/60">Encuentre la solución por la variable o el proceso que necesita entender, controlar o proteger.</p>
             </div>
@@ -255,9 +239,7 @@ export default function Home() {
         <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
           <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
             <div className="lg:sticky lg:top-28 lg:self-start">
-              <p className="section-kicker">Portafolio recuperado</p>
               <h2 className="mt-5 text-4xl font-black leading-[.95] tracking-[-.045em] sm:text-6xl">Tecnología elegida por su aplicación.</h2>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-[#526576]">Conservamos las quince categorías originales y las presentamos como un catálogo técnico más navegable.</p>
               <div className="relative mt-10 aspect-[1.35] overflow-hidden bg-[#e8edf0]">
                 <Image src="/assets/weigh-in-motion.png" alt="Sistema de pesaje en movimiento" fill className="object-contain p-8" />
               </div>
@@ -344,13 +326,13 @@ export default function Home() {
           <div>
             <p className="text-[11px] font-black uppercase tracking-[0.2em]">Hablemos de su aplicación</p>
             <h2 className="mt-5 max-w-4xl text-5xl font-black leading-[.9] tracking-[-.055em] sm:text-7xl">De una variable crítica a una solución clara.</h2>
-            <a href="mailto:info@arec.com.co?subject=Consulta%20técnica%20desde%20el%20nuevo%20sitio%20AREC" className="group mt-10 inline-flex h-14 items-center gap-3 bg-[#06182c] px-7 text-xs font-black uppercase tracking-[0.12em] text-white transition hover:bg-[#0b334e]">
+            <a href="mailto:ventas@arec.com.co?subject=Consulta%20técnica%20desde%20el%20nuevo%20sitio%20AREC" className="group mt-10 inline-flex h-14 items-center gap-3 bg-[#06182c] px-7 text-xs font-black uppercase tracking-[0.12em] text-white transition hover:bg-[#0b334e]">
               Solicitar asesoría técnica <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
           <div className="grid content-end gap-5 text-sm font-semibold">
-            <a href="tel:+573142466775" className="flex items-center gap-4 border-b border-[#06182c]/25 pb-5"><Phone className="size-5" /> (+57) 314 246 6775</a>
-            <a href="mailto:info@arec.com.co" className="flex items-center gap-4 border-b border-[#06182c]/25 pb-5"><Mail className="size-5" /> info@arec.com.co</a>
+            <a href="tel:+573107835485" className="flex items-center gap-4 border-b border-[#06182c]/25 pb-5"><Phone className="size-5" /> +57 310 783 5485</a>
+            <a href="mailto:ventas@arec.com.co" className="flex items-center gap-4 border-b border-[#06182c]/25 pb-5"><Mail className="size-5" /> ventas@arec.com.co</a>
             <p className="flex items-start gap-4 border-b border-[#06182c]/25 pb-5"><MapPin className="mt-0.5 size-5 shrink-0" /> Carrera 19A No. 116–19, Oficina 102<br />Bogotá, Colombia</p>
           </div>
         </div>
