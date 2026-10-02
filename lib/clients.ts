@@ -1,6 +1,6 @@
 export type Client = {
   name: string;
-  logo: string;
+  logo: string | null;
   sector: string;
   description: string;
 };
@@ -21,16 +21,12 @@ const descriptions: Record<string, string> = {
   'Universidad e investigación': 'Educación superior, investigación y desarrollo tecnológico.',
 };
 
-const raw: Array<[string, string, string]> = [
+const raw: Array<[string, string | null, string]> = [
   ['Aceites Manuelita', 'aceites-manuelita-2.png', 'Agroindustria'],
-  ['ACP - Autoridad del Canal de Panamá', 'acp-autoridad_del_canal_de_panama.png', 'Construcción e infraestructura'],
   ['AGA', 'aga-logo-.png', 'Manufactura'],
   ['Agencia Nacional de Seguridad Vial', 'agencia-nacional-de-seguridad-vial.jpg', 'Gobierno y defensa'],
   ['ANI - Agencia Nacional de Infraestructura', 'ani.png', 'Gobierno y defensa'],
-  ['Argos', 'argos.png', 'Minería y materiales'],
-  ['Aguas de Cartagena - ACUACAR', 'acuacar.png', 'Energía y servicios públicos'],
   ['Axia Energia', 'axia-energia.svg', 'Energía y servicios públicos'],
-  ['Bavaria', 'bavaria.png', 'Alimentos y bebidas'],
   ['BHP Billiton', 'bhp-billiton.png', 'Minería y materiales'],
   ['Biomax', 'biomax.png', 'Petróleo, gas y petroquímica'],
   ['Bismark', 'bismark.png', 'Ingeniería y tecnología'],
@@ -39,12 +35,9 @@ const raw: Array<[string, string, string]> = [
   ['Cerrejón', 'cerrejon.png', 'Minería y materiales'],
   ['Cerro Matoso', 'cerro-matoso.png', 'Minería y materiales'],
   ['Civilec Medellín', 'civilec-medellin.png', 'Construcción e infraestructura'],
-  ['Coca-Cola FEMSA', 'coca-cola_femsa_logo.png', 'Alimentos y bebidas'],
   ['Compax', 'compax.jpg', 'Ingeniería y tecnología'],
   ['Concesiones CCFC', 'conceciones-ccfc.jpg', 'Construcción e infraestructura'],
-  ['Constructora Bolívar', 'constructora-bolivar.jpeg', 'Construcción e infraestructura'],
   ['Corficolombiana', 'corficolombiana.jpg', 'Servicios financieros'],
-  ['Corona', 'corona.webp', 'Manufactura'],
   ['COVIPACÍFICO', 'covipacifico.jpg', 'Construcción e infraestructura'],
   ['Cusezar', 'cusezar.jpeg', 'Construcción e infraestructura'],
   ['EAFIT', 'eafit-logo.png', 'Universidad e investigación'],
@@ -55,7 +48,6 @@ const raw: Array<[string, string, string]> = [
   ['Fénix', 'fenix.png', 'Ingeniería y tecnología'],
   ['Flowserve', 'flowserve.webp', 'Manufactura'],
   ['FQML Panamá', 'fqml-panama.png', 'Minería y materiales'],
-  ['Fuerza Aérea Colombiana', 'fuerza-aerea-de-colombia-2.png', 'Gobierno y defensa'],
   ['General Motors', 'general-motors.png', 'Automotriz y transporte'],
   ['Gerfor', 'gerfor.jpg', 'Manufactura'],
   ['Hocol', 'hocol.png', 'Petróleo, gas y petroquímica'],
@@ -77,15 +69,11 @@ const raw: Array<[string, string, string]> = [
   ['OCENSA', 'ocensa.webp', 'Petróleo, gas y petroquímica'],
   ['Odebrecht', 'odebrecht.png', 'Construcción e infraestructura'],
   ['Palmeras Santana S.A.S.', 'palmeras-santana.png', 'Agroindustria'],
-  ['Pavco', 'pavco.png', 'Manufactura'],
-  ['Postobón', 'postobon-sa.png', 'Alimentos y bebidas'],
   ['Praxair', 'praxair-.png', 'Manufactura'],
   ['Promigas', 'promigas.png', 'Petróleo, gas y petroquímica'],
   ['Propilco', 'propilco.png', 'Manufactura'],
   ['Proyecol', 'proyecol.jpg', 'Ingeniería y tecnología'],
-  ['Ramo', 'ramo-logo.png', 'Alimentos y bebidas'],
   ['Renault', 'renault.png', 'Automotriz y transporte'],
-  ['Roche', 'roche.png', 'Salud y ciencias de la vida'],
   ['Ruta del Sol', 'ruta-del-sol.jpg', 'Construcción e infraestructura'],
   ['Seguritech', 'seguritech.jpeg', 'Ingeniería y tecnología'],
   ['Siemens', 'siemens-logo.png', 'Ingeniería y tecnología'],
@@ -94,8 +82,8 @@ const raw: Array<[string, string, string]> = [
   ['Sucromiles', 'sucromiles.jpg', 'Agroindustria'],
   ['TEBSA', 'tebsa.png', 'Energía y servicios públicos'],
   ['Tecnoglass', 'tecnoglass.jpg', 'Manufactura'],
+  ['Termomorichal', null, 'Energía y servicios públicos'],
   ['Termoyopal', 'termoyopal.png', 'Energía y servicios públicos'],
-  ['Terpel', 'terpel.webp', 'Petróleo, gas y petroquímica'],
   ['Tipiel', 'tipiel.png', 'Ingeniería y tecnología'],
   ['Universidad de los Andes', 'uniandes.png', 'Universidad e investigación'],
   ['Universidad Nacional de Asunción', 'univ-nacional-asuncion.png', 'Universidad e investigación'],
@@ -105,7 +93,6 @@ const raw: Array<[string, string, string]> = [
   ['Universidad Nacional de Colombia', 'universidad-nacional-de-colombia.jpg', 'Universidad e investigación'],
   ['Universidad Nacional de Ingeniería', 'universidad-nacional-de-ingenieria-uni-logo.png', 'Universidad e investigación'],
   ['Universidad Tecnológica de Pereira', 'utp-pereira.png', 'Universidad e investigación'],
-  ['Vanylon', 'vanylon.jpg', 'Manufactura'],
   ['Wärtsilä', 'wartsila.png', 'Energía y servicios públicos'],
   ['Wood Group', 'wood-group.png', 'Ingeniería y tecnología'],
 ];
@@ -113,7 +100,7 @@ const raw: Array<[string, string, string]> = [
 export const clients: Client[] = raw
   .map(([name, filename, sector]) => ({
     name,
-    logo: `/assets/clients/${filename}`,
+    logo: filename ? `/assets/clients/${filename}` : null,
     sector,
     description: descriptions[sector],
   }))

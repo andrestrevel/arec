@@ -47,7 +47,14 @@ export default function ClientsPage() {
                 className="group grid min-h-[238px] grid-rows-[auto_1fr] border border-[#c9d2d8] bg-white transition duration-300 hover:-translate-y-1 hover:border-[#0b7898] hover:shadow-[0_16px_40px_rgba(6,24,44,.10)] focus-visible:-translate-y-1 focus-visible:border-[#0b7898] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b7898] focus-visible:shadow-[0_16px_40px_rgba(6,24,44,.10)]"
               >
                 <div className="relative m-5 mb-0 flex h-[106px] items-center justify-center overflow-hidden bg-[#f7f8f8] p-4 transition-[height] duration-300 ease-out group-hover:h-48 group-focus:h-48">
-                  <Image src={client.logo} alt={`Logo de ${client.name}`} fill sizes="(max-width: 640px) 90vw, (max-width: 1280px) 45vw, 30vw" className="object-contain p-4 mix-blend-multiply transition-[padding] duration-300 ease-out group-hover:p-2 group-focus:p-2" />
+                  {client.logo ? (
+                    <Image src={client.logo} alt={`Logo de ${client.name}`} fill sizes="(max-width: 640px) 90vw, (max-width: 1280px) 45vw, 30vw" className="object-contain p-4 mix-blend-multiply transition-[padding] duration-300 ease-out group-hover:p-2 group-focus:p-2" />
+                  ) : (
+                    <div className="text-center">
+                      <span className="block text-xl font-black tracking-[-.035em] text-[#0b334e] sm:text-2xl">TERMOMORICHAL</span>
+                      <span className="mt-2 block text-[10px] font-bold uppercase tracking-[.18em] text-[#0b7898]">Generación de energía</span>
+                    </div>
+                  )}
                 </div>
                 <div className="p-5">
                   <div className="flex items-start gap-3">
