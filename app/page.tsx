@@ -65,7 +65,6 @@ const products = [
   'Válvulas termostáticas',
   'Sistemas de protección para atmósferas explosivas (ATEX)',
   'Ciberseguridad industrial (OT)',
-  'Equipos servidores, workstations y software especializado para infraestructura en producción',
 ];
 
 const services = [
@@ -241,25 +240,18 @@ export default function Home() {
 
       <section id="productos" className="bg-white py-28 text-[#071d34]">
         <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
-          <div className="grid gap-10 lg:grid-cols-[.8fr_1.2fr]">
-            <div className="lg:sticky lg:top-28 lg:self-start">
-              <h2 className="mt-5 text-4xl font-black leading-[.95] tracking-[-.045em] sm:text-6xl">Tecnología elegida por su aplicación.</h2>
-              <div className="relative mt-10 aspect-[1.35] overflow-hidden bg-[#e8edf0]">
-                <Image src="/assets/weigh-in-motion.png" alt="Sistema de pesaje en movimiento" fill className="object-contain p-8" />
-              </div>
-            </div>
-            <ol className="border-t border-[#c9d2d8]">
-              {products.map((product, index) => (
-                <li key={product}>
-                  <a href="#contacto" className="group grid grid-cols-[3rem_1fr_auto] items-center gap-4 border-b border-[#c9d2d8] py-5 transition hover:bg-[#f3f0e9] sm:grid-cols-[5rem_1fr_auto] sm:px-4">
-                    <span className="text-xs font-black text-[#0b7898]">{String(index + 1).padStart(2, '0')}</span>
-                    <span className="text-base font-bold sm:text-xl">{product}</span>
-                    <ArrowRight className="size-4 text-[#f5a623] transition-transform group-hover:translate-x-1" />
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </div>
+          <h2 className="max-w-4xl text-4xl font-black leading-[.95] tracking-[-.045em] sm:text-6xl">Tecnología elegida por su aplicación.</h2>
+          <ol className="mt-12 grid border-l border-t border-[#c9d2d8] md:grid-cols-2">
+            {products.map((product, index) => (
+              <li key={product} className="border-b border-r border-[#c9d2d8]">
+                <a href="#contacto" className="group grid min-h-28 grid-cols-[3rem_1fr_auto] items-center gap-4 px-4 py-5 transition hover:bg-[#f3f0e9] sm:grid-cols-[5rem_1fr_auto] sm:px-6">
+                  <span className="text-xs font-black text-[#0b7898]">{String(index + 1).padStart(2, '0')}</span>
+                  <span className="text-base font-bold sm:text-xl">{product}</span>
+                  <ArrowRight className="size-4 text-[#f5a623] transition-transform group-hover:translate-x-1" />
+                </a>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
