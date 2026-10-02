@@ -6,7 +6,7 @@ const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
 const geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://arec-ingenieria-pro.andrestrevel.chatgpt.site'),
+  metadataBase: new URL('https://arec.com.co'),
   title: 'AREC | Instrumentación e ingeniería aplicada',
   description: 'Soluciones de tráfico, automatización y control industrial, petróleo, gas y marino para Latinoamérica.',
   icons: { icon: '/favicon.png' },

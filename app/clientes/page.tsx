@@ -9,6 +9,8 @@ export const metadata: Metadata = {
   description: 'Organizaciones que han confiado en las soluciones de instrumentación e ingeniería aplicada de AREC.',
 };
 
+export const dynamic = 'force-static';
+
 export default function ClientsPage() {
   return (
     <main className="min-h-screen bg-[#f3f0e9] text-[#071d34]">

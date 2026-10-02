@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description: 'Fabricantes representados y aliados tecnológicos que respaldan las soluciones de AREC.',
 };
 
+export const dynamic = 'force-static';
+
 const represented = [
   {
     name: 'AMOT',
