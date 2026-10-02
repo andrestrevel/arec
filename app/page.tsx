@@ -64,6 +64,8 @@ const products = [
   'Sensores de temperatura',
   'Válvulas termostáticas',
   'Sistemas de protección para atmósferas explosivas (ATEX)',
+  'Ciberseguridad industrial (OT)',
+  'Equipos servidores, workstations y software especializado para infraestructura en producción',
 ];
 
 const services = [
@@ -122,11 +124,13 @@ export default function Home() {
           <a href="#inicio" aria-label="AREC, ir al inicio" className="shrink-0 rounded-sm bg-white px-2.5 py-2">
             <Image src="/assets/arec-logo.svg" alt="AREC Instrumentación e Ingeniería" width={206} height={48} priority className="h-auto w-[145px] sm:w-[206px]" />
           </a>
-          <nav aria-label="Navegación principal" className="hidden items-center gap-7 text-[12px] font-bold uppercase tracking-[0.14em] lg:flex">
+          <nav aria-label="Navegación principal" className="hidden items-center gap-5 text-[11px] font-bold uppercase tracking-[0.11em] xl:flex">
             <a className="text-white/70 transition hover:text-white" href="#soluciones">Soluciones</a>
             <a className="text-white/70 transition hover:text-white" href="#productos">Productos</a>
             <a className="text-white/70 transition hover:text-white" href="#aplicaciones">Aplicaciones</a>
             <a className="text-white/70 transition hover:text-white" href="#servicios">Servicios</a>
+            <a className="text-white/70 transition hover:text-white" href="/clientes">Clientes</a>
+            <a className="text-white/70 transition hover:text-white" href="/representados">Representados</a>
             <a className="text-white/70 transition hover:text-white" href="#empresa">Empresa</a>
           </nav>
           <a href="#contacto" className="group inline-flex h-11 items-center gap-2 bg-[#f5a623] px-4 text-[11px] font-black uppercase tracking-[0.12em] text-[#06182c] transition hover:bg-[#ffc04d] sm:px-5">
@@ -347,6 +351,7 @@ export default function Home() {
             <p className="mt-5 max-w-xl text-sm leading-6 text-white/50">Sistemas inteligentes de transporte · Automatización y control industrial · Instrumentación para petróleo, gas y marino.</p>
           </div>
           <div className="text-left text-xs leading-6 text-white/45 lg:text-right">
+            <p><a href="/clientes" className="hover:text-white">Clientes</a> · <a href="/representados" className="hover:text-white">Representados y aliados</a></p>
             <p>Bogotá, Colombia · Miami, USA</p>
             <p>© 2026 AREC S.A.S. Todos los derechos reservados.</p>
           </div>
