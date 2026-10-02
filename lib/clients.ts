@@ -52,7 +52,6 @@ const raw: Array<[string, string | null, string]> = [
   ['Gerfor', 'gerfor.jpg', 'Manufactura'],
   ['Hocol', 'hocol.png', 'Petróleo, gas y petroquímica'],
   ['Holcim', 'holcim.webp', 'Minería y materiales'],
-  ['Indra', 'indra.jpg', 'Ingeniería y tecnología'],
   ['Indumil', 'indumil.jpeg', 'Gobierno y defensa'],
   ['Ingenio Risaralda', 'ingenio-risaralda.webp', 'Agroindustria'],
   ['Instituto Tecnológico Metropolitano de Medellín', 'itm-logo.svg', 'Universidad e investigación'],

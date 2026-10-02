@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export function InnerSiteHeader() {
   return (
-    <header className="border-b border-white/10 bg-[#06182c] text-white">
+    <header className="sticky inset-x-0 top-0 z-50 border-b border-white/10 bg-[#06182c]/95 text-white backdrop-blur-xl">
       <div className="mx-auto flex min-h-20 max-w-[1440px] items-center justify-between gap-5 px-5 py-4 lg:px-10">
         <Link href="/" aria-label="AREC, ir al inicio" className="shrink-0 rounded-sm bg-white px-2.5 py-2">
           <Image src="/assets/arec-logo.svg" alt="AREC Instrumentación e Ingeniería" width={206} height={48} priority className="h-auto w-[160px] sm:w-[206px]" />
@@ -19,4 +19,3 @@ export function InnerSiteHeader() {
     </header>
   );
 }
-

@@ -19,6 +19,7 @@ import {
   Weight,
   Wrench,
 } from 'lucide-react';
+import { clients } from '@/lib/clients';
 
 const businessLines = [
   {
@@ -101,6 +102,21 @@ const projects = [
   ['Mantenimiento predictivo', 'Monitoreo del estado de bombas y motores en procesos industriales.'],
 ];
 
+const homepagePartners = [
+  ['AMOT', '/assets/partners/amot.jpg'],
+  ['MINCO', '/assets/partners/logo_minco.webp'],
+  ['Vishay Precision Group', '/assets/partners/vishay-precision-group.svg'],
+  ['Sensortronics', '/assets/partners/sensortronics.jpg'],
+  ['Thames Side Sensors', '/assets/partners/thames-side.webp'],
+  ['Chalwyn', '/assets/partners/chalwyn.webp'],
+  ['Roda Deaco', '/assets/partners/roda-deaco.webp'],
+  ['Geokon Instruments', '/assets/partners/geokon-instruments.png'],
+  ['Kistler AG', '/assets/partners/kistler-logo.png'],
+  ['Metrix Vibration', '/assets/partners/metrix-logo.jpg'],
+  ['HPI High Pressure Instrumentation', '/assets/partners/hpi-high-pressure-instrumentation.png'],
+  ['Campbell Scientific', '/assets/partners/campbell-scientific.svg'],
+] as const;
+
 function ArrowLink({ href, children, light = false }: { href: string; children: React.ReactNode; light?: boolean }) {
   return (
     <a
@@ -128,8 +144,8 @@ export default function Home() {
             <a className="text-white/70 transition hover:text-white" href="#productos">Productos</a>
             <a className="text-white/70 transition hover:text-white" href="#aplicaciones">Aplicaciones</a>
             <a className="text-white/70 transition hover:text-white" href="#servicios">Servicios</a>
-            <a className="text-white/70 transition hover:text-white" href="/clientes">Clientes</a>
-            <a className="text-white/70 transition hover:text-white" href="/representados">Representados</a>
+            <a className="text-white/70 transition hover:text-white" href="#clientes-home">Clientes</a>
+            <a className="text-white/70 transition hover:text-white" href="#representados-home">Representados</a>
             <a className="text-white/70 transition hover:text-white" href="#empresa">Empresa</a>
           </nav>
           <a href="#contacto" className="group inline-flex h-11 items-center gap-2 bg-[#f5a623] px-4 text-[11px] font-black uppercase tracking-[0.12em] text-[#06182c] transition hover:bg-[#ffc04d] sm:px-5">
@@ -182,7 +198,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="soluciones" className="bg-[#f3f0e9] pb-28 pt-36 text-[#071d34]">
+      <section id="soluciones" className="scroll-mt-20 bg-[#f3f0e9] pb-28 pt-36 text-[#071d34]">
         <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
           <div className="grid gap-8 lg:grid-cols-[.8fr_1.2fr] lg:items-end">
             <div>
@@ -216,7 +232,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="aplicaciones" className="relative border-y border-white/10 bg-[#06182c] py-28">
+      <section id="aplicaciones" className="relative scroll-mt-20 border-y border-white/10 bg-[#06182c] py-28">
         <div className="engineering-grid absolute inset-0 opacity-20" />
         <div className="relative mx-auto max-w-[1440px] px-5 lg:px-10">
           <div className="grid gap-10 lg:grid-cols-[.75fr_1.25fr]">
@@ -238,7 +254,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="productos" className="bg-white py-28 text-[#071d34]">
+      <section id="productos" className="scroll-mt-20 bg-white py-28 text-[#071d34]">
         <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
           <h2 className="max-w-4xl text-4xl font-black leading-[.95] tracking-[-.045em] sm:text-6xl">Tecnología elegida por su aplicación.</h2>
           <ol className="mt-12 grid border-l border-t border-[#c9d2d8] md:grid-cols-2">
@@ -255,7 +271,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="servicios" className="bg-[#dfeaec] py-28 text-[#071d34]">
+      <section id="servicios" className="scroll-mt-20 bg-[#dfeaec] py-28 text-[#071d34]">
         <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
           <p className="section-kicker">Ciclo de vida completo</p>
           <div className="mt-5 grid gap-8 lg:grid-cols-2 lg:items-end">
@@ -297,7 +313,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="empresa" className="relative bg-[#0b334e] py-28">
+      <section id="empresa" className="relative scroll-mt-20 bg-[#0b334e] py-28">
         <div className="engineering-grid absolute inset-0 opacity-20" />
         <div className="relative mx-auto grid max-w-[1440px] gap-16 px-5 lg:grid-cols-2 lg:px-10">
           <div>
@@ -317,7 +333,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contacto" className="bg-[#f5a623] py-24 text-[#06182c]">
+      <section id="contacto" className="scroll-mt-20 bg-[#f5a623] py-24 text-[#06182c]">
         <div className="mx-auto grid max-w-[1440px] gap-12 px-5 lg:grid-cols-[1.2fr_.8fr] lg:px-10">
           <div>
             <p className="text-[11px] font-black uppercase tracking-[0.2em]">Hablemos de su aplicación</p>
@@ -330,6 +346,54 @@ export default function Home() {
             <a href="tel:+573107835485" className="flex items-center gap-4 border-b border-[#06182c]/25 pb-5"><Phone className="size-5" /> +57 310 783 5485</a>
             <a href="mailto:ventas@arec.com.co" className="flex items-center gap-4 border-b border-[#06182c]/25 pb-5"><Mail className="size-5" /> ventas@arec.com.co</a>
             <p className="flex items-start gap-4 border-b border-[#06182c]/25 pb-5"><MapPin className="mt-0.5 size-5 shrink-0" /> Carrera 19A No. 116–19, Oficina 102<br />Bogotá, Colombia</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="representados-home" className="scroll-mt-20 bg-[#06182c] py-24 text-white">
+        <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
+          <div className="flex flex-wrap items-end justify-between gap-6 border-b border-white/15 pb-7">
+            <div>
+              <p className="section-kicker !text-[#37c8e7]">Red tecnológica</p>
+              <h2 className="mt-4 text-4xl font-black leading-[.95] tracking-[-.045em] sm:text-6xl">Nuestros representados y aliados.</h2>
+            </div>
+            <ArrowLink href="/representados" light>Conocer la red</ArrowLink>
+          </div>
+          <div className="mt-10 grid grid-cols-2 gap-px bg-white/15 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+            {homepagePartners.map(([name, logo]) => (
+              <a key={name} href="/representados" className="group bg-white p-4 transition hover:bg-[#eef4f3] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#37c8e7]">
+                <div className="relative h-24 overflow-hidden transition-[height] duration-300 ease-out group-hover:h-32 group-focus:h-32">
+                  <Image src={logo} alt={`Logo de ${name}`} fill sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 15vw" className="object-contain p-3 mix-blend-multiply transition-[padding] duration-300 group-hover:p-1 group-focus:p-1" />
+                </div>
+                <p className="mt-3 min-h-10 text-center text-xs font-black uppercase leading-5 tracking-[.08em] text-[#0b334e]">{name}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="clientes-home" className="scroll-mt-20 bg-[#f3f0e9] py-24 text-[#071d34]">
+        <div className="mx-auto max-w-[1440px] px-5 lg:px-10">
+          <div className="flex flex-wrap items-end justify-between gap-6 border-b border-[#c9d2d8] pb-7">
+            <div>
+              <p className="section-kicker">Experiencia multisectorial</p>
+              <h2 className="mt-4 text-4xl font-black leading-[.95] tracking-[-.045em] sm:text-6xl">Nuestros clientes.</h2>
+            </div>
+            <ArrowLink href="/clientes">Ver directorio completo</ArrowLink>
+          </div>
+          <div className="mt-10 grid grid-cols-2 gap-px bg-[#c9d2d8] sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
+            {clients.map((client) => (
+              <a key={client.name} href="/clientes" className="group bg-white p-4 transition hover:bg-[#eef4f3] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#0b7898]">
+                <div className="relative flex h-20 items-center justify-center overflow-hidden transition-[height] duration-300 ease-out group-hover:h-28 group-focus:h-28">
+                  {client.logo ? (
+                    <Image src={client.logo} alt={`Logo de ${client.name}`} fill sizes="(max-width: 640px) 45vw, (max-width: 1024px) 30vw, 16vw" className="object-contain p-2 mix-blend-multiply transition-[padding] duration-300 group-hover:p-0 group-focus:p-0" />
+                  ) : (
+                    <span className="text-center text-sm font-black tracking-[-.02em] text-[#0b334e]">{client.name.toUpperCase()}</span>
+                  )}
+                </div>
+                <p className="mt-3 min-h-10 text-center text-xs font-bold leading-5 text-[#526576]">{client.name}</p>
+              </a>
+            ))}
           </div>
         </div>
       </section>
