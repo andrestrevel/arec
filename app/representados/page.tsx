@@ -33,6 +33,24 @@ const represented = [
     focus: 'Celdas de carga y pesaje industrial',
     description: 'Tecnología de medición de peso y fuerza para integración en básculas, tanques, plataformas y maquinaria.',
   },
+  {
+    name: 'THAMES SIDE SENSORS',
+    logo: '/assets/partners/thames-side.webp',
+    focus: 'Celdas de carga y sistemas de pesaje',
+    description: 'Celdas de carga, módulos de pesaje e instrumentación para silos, tanques, tolvas y procesos industriales.',
+  },
+  {
+    name: 'CHALWYN',
+    logo: '/assets/partners/chalwyn.webp',
+    focus: 'Protección de motores diésel',
+    description: 'Válvulas de cierre de admisión, arrestadores de chispas y soluciones certificadas para atmósferas explosivas.',
+  },
+  {
+    name: 'RODA DEACO',
+    logo: '/assets/partners/roda-deaco.webp',
+    focus: 'Seguridad para motores en áreas de riesgo',
+    description: 'Sistemas de parada y protección para motores diésel que operan en ambientes industriales potencialmente peligrosos.',
+  },
 ];
 
 const allies = [
@@ -47,6 +65,12 @@ const allies = [
     logo: '/assets/partners/metrix-logo.jpg',
     focus: 'Monitoreo y protección por vibración',
     description: 'Sensores, transmisores e interruptores para monitoreo de condición y protección de maquinaria rotativa.',
+  },
+  {
+    name: 'HPI HIGH PRESSURE INSTRUMENTATION',
+    logo: '/assets/partners/hpi-high-pressure-instrumentation.png',
+    focus: 'Instrumentación y medición de alta presión',
+    description: 'Transductores y equipos especializados para medición, ensayo y adquisición de datos en aplicaciones de alta exigencia.',
   },
 ];
 
