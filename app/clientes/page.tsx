@@ -41,9 +41,13 @@ export default function ClientsPage() {
 
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {clients.map((client, index) => (
-              <article key={client.name} className="group grid min-h-[238px] grid-rows-[106px_auto] border border-[#c9d2d8] bg-white transition hover:-translate-y-1 hover:border-[#0b7898] hover:shadow-[0_16px_40px_rgba(6,24,44,.10)]">
-                <div className="relative m-5 mb-0 flex items-center justify-center overflow-hidden bg-[#f7f8f8] p-4">
-                  <Image src={client.logo} alt={`Logo de ${client.name}`} fill sizes="(max-width: 640px) 90vw, (max-width: 1280px) 45vw, 30vw" className="object-contain p-4 mix-blend-multiply" />
+              <article
+                key={client.name}
+                tabIndex={0}
+                className="group grid min-h-[238px] grid-rows-[auto_1fr] border border-[#c9d2d8] bg-white transition duration-300 hover:-translate-y-1 hover:border-[#0b7898] hover:shadow-[0_16px_40px_rgba(6,24,44,.10)] focus-visible:-translate-y-1 focus-visible:border-[#0b7898] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b7898] focus-visible:shadow-[0_16px_40px_rgba(6,24,44,.10)]"
+              >
+                <div className="relative m-5 mb-0 flex h-[106px] items-center justify-center overflow-hidden bg-[#f7f8f8] p-4 transition-[height] duration-300 ease-out group-hover:h-48 group-focus:h-48">
+                  <Image src={client.logo} alt={`Logo de ${client.name}`} fill sizes="(max-width: 640px) 90vw, (max-width: 1280px) 45vw, 30vw" className="object-contain p-4 mix-blend-multiply transition-[padding] duration-300 ease-out group-hover:p-2 group-focus:p-2" />
                 </div>
                 <div className="p-5">
                   <div className="flex items-start gap-3">
@@ -64,4 +68,3 @@ export default function ClientsPage() {
     </main>
   );
 }
-
