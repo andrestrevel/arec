@@ -22,10 +22,10 @@ const represented = [
     description: 'Sensores de temperatura, calentadores flexibles e instrumentación para aplicaciones industriales exigentes.',
   },
   {
-    name: 'REVERE TRANSDUCERS',
-    logo: null,
-    focus: 'Pesaje y medición de fuerza',
-    description: 'Celdas de carga y transductores para sistemas de pesaje industrial, procesos y aplicaciones de alta precisión.',
+    name: 'VISHAY PRECISION GROUP',
+    logo: '/assets/partners/vishay-precision-group.svg',
+    focus: 'Tecnologías de medición de precisión',
+    description: 'Sensores, galgas extensométricas, celdas de carga y soluciones de medición para aplicaciones industriales de alta exactitud.',
   },
   {
     name: 'SENSORTRONICS',
@@ -51,6 +51,12 @@ const represented = [
     focus: 'Seguridad para motores en áreas de riesgo',
     description: 'Sistemas de parada y protección para motores diésel que operan en ambientes industriales potencialmente peligrosos.',
   },
+  {
+    name: 'GEOKON INSTRUMENTS',
+    logo: '/assets/partners/geokon-instruments.png',
+    focus: 'Instrumentación geotécnica y estructural',
+    description: 'Sensores de cuerda vibrante, adquisición de datos y plataformas de monitoreo para infraestructura, minería y obras civiles.',
+  },
 ];
 
 const allies = [
@@ -72,6 +78,12 @@ const allies = [
     focus: 'Instrumentación y medición de alta presión',
     description: 'Transductores y equipos especializados para medición, ensayo y adquisición de datos en aplicaciones de alta exigencia.',
   },
+  {
+    name: 'CAMPBELL SCIENTIFIC',
+    logo: '/assets/partners/campbell-scientific.svg',
+    focus: 'Adquisición de datos y monitoreo remoto',
+    description: 'Registradores de datos, sistemas de medición y control para aplicaciones ambientales, energéticas y de infraestructura.',
+  },
 ];
 
 function BrandCard({ brand, number }: { brand: (typeof represented)[number]; number: number }) {
@@ -81,14 +93,7 @@ function BrandCard({ brand, number }: { brand: (typeof represented)[number]; num
       className="group grid min-h-[310px] grid-rows-[auto_1fr] border border-[#c9d2d8] bg-white transition duration-300 hover:-translate-y-1 hover:border-[#0b7898] hover:shadow-[0_16px_40px_rgba(6,24,44,.10)] focus-visible:-translate-y-1 focus-visible:border-[#0b7898] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0b7898] focus-visible:shadow-[0_16px_40px_rgba(6,24,44,.10)]"
     >
       <div className="relative m-6 mb-0 flex h-[125px] items-center justify-center overflow-hidden bg-[#f5f7f7] p-6 transition-[height] duration-300 ease-out group-hover:h-[210px] group-focus:h-[210px]">
-        {brand.logo ? (
-          <Image src={brand.logo} alt={`Logo de ${brand.name}`} fill sizes="(max-width: 768px) 90vw, 40vw" className="object-contain p-7 mix-blend-multiply transition-[padding] duration-300 ease-out group-hover:p-3 group-focus:p-3" />
-        ) : (
-          <div className="text-center">
-            <span className="block text-2xl font-black tracking-[-.04em] text-[#0b334e]">REVERE</span>
-            <span className="mt-1 block text-xs font-bold tracking-[.18em] text-[#0b7898]">TRANSDUCERS</span>
-          </div>
-        )}
+        <Image src={brand.logo} alt={`Logo de ${brand.name}`} fill sizes="(max-width: 768px) 90vw, 40vw" className="object-contain p-7 mix-blend-multiply transition-[padding] duration-300 ease-out group-hover:p-3 group-focus:p-3" />
       </div>
       <div className="p-6">
         <div className="flex items-start gap-4">
